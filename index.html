@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;form&gt;</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+
+  <body class="body">
+    <header class="header">
+      <div class="container">
+        <h2 class="title">&lt;form&gt;</h2>
+        <p>
+          Формы позволяют получать информацию посетителей веб страницы. Списки,
+          рассылки, контактные данные, профиль пользователя, логин и
+          регистрация, коментарии в блогах - все это реализуется с помощью форм
+          и их элементов.
+        </p>
+        <img
+          src="./images/form-elements.png"
+          alt="form"
+          width="600"
+          class="img"
+        />
+        <p>
+          Формы - это "денежные страницы", благодоря которым интернет магазины
+          продают свои товары, а онлайн сервисы получают оплату за
+          предоставленные услуги. Компании измеряют успех своего веб сайта
+          эффектиностью форм, потому что они отвечают на такие вопросы, как,
+          сколько потенциальных клиентов наш веб сайт отправил отделу продаж и
+          сколько людей подписались на наш продукт условно на прошлой неделе,
+          поэтому формы постоянно рефакторятся и улучшаются.
+        </p>
+        <img src="./images/form-frontend-and-backend.png" alt="" class="img" />
+        <p>
+          Функциональная HTML форма состоит из 2х частей - интерфейс
+          пользователя и сервер backend. Первое - это внешний вид формы
+          (разметка и оформление), а второе - код обработки введенных данных
+          (валидация, хранение данных, отправка элетронной почты и т.д).
+        </p>
+        <h2 class="title">Элемент &lt;form&gt;</h2>
+        <p>
+          Элемент form - это контейнер для группы связаных элементов формы,
+          например форма отзыва, регистрации, олаты заказа в интернет магазине.
+          Каждый из этих компонентов интерфейса состоит из группы интерактивных
+          элементов, сгруппированых формой
+        </p>
+        <p class="bg">
+          index.html <br />
+          &lt;form name=&quot;signup_form&quot; autocomplete=&quot;on&quot;
+          novalidate&gt; <br />
+          &lt;label&gt; <br />
+          Email <br />
+          &lt;input type=&quot;email&quot; name=&quot;email&quot; /&gt; <br />
+          &lt;/label&gt; <br /><br />
+
+          &lt;label&gt;<br />
+          Passwordbr <br />
+          &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;<br />
+          &lt;/label&gt;<br /><br />
+
+          &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;<br />
+          &lt;/form&gt;
+        </p>
+        <p>
+          У элемента форм нет обязательных атрибутов, поэтому в примере
+          несколько полезных необязательных.
+        </p>
+        <ul>
+          <li>
+            <b>name</b> - уникальное на текузей веб страницк имя формы.
+            Используется как на сервере так и на клиенте при работе с form.
+            Может содержать символы английского алфавита в любом регистре,
+            цифры, подчеркивания и тере. В имени нельзя использовать пробел.
+          </li>
+          <li>
+            <b>autocomplite</b> - определяет может ли браузер автоматически
+            заполнять значения всех элементов формы. Имеет всего 2 значения off
+            и on. Это поведение можно будет изменить для каждого элемента форм.
+          </li>
+          <li>
+            <b>novalidate</b> - атрибут-флаг, не имеет значения. Говорит
+            браузеру не проверять валидность введенных данных при отправке
+            формы. Если атрибуты не указаны, выполняется клиентская валидация.
+          </li>
+        </ul>
+        <p class="information">
+          При клике по &lt;button type=&quot;submit&quot;&gt; или при нажатии
+          клавиши Enter в любом поле формы, она «отправляется», что приводит к
+          перезагрузке текущей страницы. Это поведение по умолчанию, которое
+          можно будет изменить при помощи JavaScript.
+        </p>
+        <h2 class="title">&lt;label&gt;</h2>
+        <p>
+          Элемент label связывает описание (метку) с интерактивным элементом
+          формы. Текст метки связан с элементом не только визуально, но и
+          логически. Например screen reader огласит текст метки, когда
+          пользователь поставит фокус на связаные элементы. При клике по метке
+          связаный элемент автоматически получит эффект фокуса <br />
+          <br />
+          Если элемент формы, например поле ввода вкладывается в label связь
+          создается браузером автоматически. Клик по тексту mail или password
+          поставит фокус в соответствующем поле ввода
+        </p>
+        <p class="bg">
+          index.html <br />
+          &lt;form&gt;<br />
+          &lt;label&gt;<br />
+          Emailbr &lt;input type=&quot;email&quot; name=&quot;email&quot;
+          /&gt;<br />
+          &lt;/label&gt;<br /><br />
+
+          &lt;label&gt;<br />
+          Password <br />
+          &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;<br />
+          &lt;/label&gt;<br /><br />
+
+          &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;<br />
+          &lt;/form&gt;
+        </p>
+        <p>
+          Если элемент формы не вложен в label необходимо явно связать их через
+          атрибут id связываемого элемента и атрибута for метки
+        </p>
+        <img
+          src="./images/label-element-for-attribute.png"
+          alt=""
+          width="600"
+          class="img"
+        />
+        <p class="bg">
+          index.html <br />
+          &lt;form&gt;<br />
+          &lt;label for=&quot;user_email&quot;&gt;Email&lt;/label&gt;<br />
+          &lt;input type=&quot;email&quot; name=&quot;email&quot;
+          id=&quot;user_email&quot; /&gt;<br /><br />
+
+          &lt;label for=&quot;user_password&quot;&gt;Password&lt;/label&gt;<br />
+          &lt;input type=&quot;password&quot; name=&quot;password&quot;
+          id=&quot;user_password&quot; /&gt;<br /><br />
+
+          &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;<br />
+          &lt;/form&gt;
+        </p>
+        <h2 class="title">Элемент input</h2>
+        <p>
+          Универсальный элемент для создания разнообразных полей ввода. Тип
+          ввода определяется атрибутом type, значение которого по умолчанию
+          текст - однострочное текстовое поле, применяющее любые символы
+        </p>
+        <p class="bg">
+          <b>&lt;input type=&quot;text&quot; name=&quot;username&quot; /&gt;</b>
+        </p>
+        <p>
+          Концептуально тег input представляет запись в словаре, которая
+          отправляется на сервер. Атрибут name определяет имя этой записи, а
+          значение это то что ввел пользователь. Имя поля должно быть уникальным
+          внутри формы. Значение атрибутов name так же используется при работе с
+          формой в JavaScript
+        </p>
+        <img
+          src="./images/sending-input-variable-to-server.png"
+          alt=""
+          width="600"
+          class="img"
+        />
+        <h2 class="title">Атрибут autofocus</h2>
+        <p>
+          Поле ввода, которому задан этот атрибут, получит фокус при загрузке
+          страницы и в нем можно сразу набирать текст. По умолчанию атрибут не
+          установлен ни для какого поля. <br /><br />
+          Т.к фокус не может быть у нескольких элементов одновременно, атрибут
+          задается полю, с которого пользователю стоит начать заполнять форму.
+          Атрибут autofocus логический, т.е без значений, указывается только
+          название.
+        </p>
+        <form>
+          <label>
+            First Name
+            <!-- <input name="firstName" type="text" autofocus placeholder="Name" /> -->
+            <input name="firstName" type="text" placeholder="Name" />
+          </label>
+          <label>
+            Last Name
+            <input name="lastName" type="text" placeholder="Last Name" />
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+        <h2 class="title">Атрибут placeholder</h2>
+        <p>
+          Позволяет отображать текст-подсказку о том, какие данные необходимо
+          ввести в поле, когда элемент input пуст. Этот атрибут можно
+          использовать в любом элементе формы, где есть текстовое поле ввода.
+        </p>
+        <form>
+          <label>
+            Username
+            <input type="text" name="username" placeholder="Jacob Mercer" />
+          </label>
+          <button type="submit">Submit feedback</button>
+        </form>
+        <h2 class="title">Почта и пароль</h2>
+        <p>
+          Значение атрибута type влияет на тип поля, набор символов, который в
+          него можно ввести и последующую валидацию значения. Например когда
+          браузер смартвфона видит поле с типом email, он отображает
+          пользователю специальную клавиатуру для ввода элетронной почтой с
+          легко доступным символом @. Браузер так же может предоставить способ
+          выбрать адрес электронной почты из адресной книги.
+        </p>
+        <form>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="mail@hosting.com" />
+          </label>
+          <label>
+            Password
+            <input
+              type="password"
+              name="pass"
+              minlength="8"
+              maxlength="16"
+              placeholder="********"
+            />
+          </label>
+          <label>
+            Tel number
+            <input type="tel" name="tel" placeholder="+38 (063) 3533222" />
+          </label>
+          <button type="submit">Registration</button>
+        </form>
+        <p>
+          Если задать атрибуту type значение radio, input превратится в
+          переключатель-радиокнопку (radio button). Радио кнопки всегда идут
+          группами, что позволяет пользователю выбрать одно из множество
+          предопределенных значений.
+        </p>
+        <form>
+          <p>Выбор цвета</p>
+          <label class="label">
+            <input type="radio" name="color" value="green" /> Зеленый
+          </label>
+          <label class="label">
+            <input type="radio" name="color" value="red" />
+             Красный
+          </label>
+          <label class="label">
+            <input type="radio" name="color" value="blue" checked />
+             Синий
+          </label>
+
+          <p>Выбор размера</p>
+          <label class="label">
+            <input type="radio" name="size" value="sm" checked />
+             Маленький
+          </label>
+          <label class="label">
+            <input type="radio" name="size" value="md" />
+             Средний
+          </label>
+          <label class="label">
+            <input type="radio" name="size" value="lg" />
+             Большой
+          </label>
+        </form>
+        <p>
+          В отличии от текстовых полей в радио кнопке нельзя воодить данные,
+          поэтому каждый из них необходимо указать значение в атрибут value. Это
+          значение, которое будет передано на сервер, когда пользователь
+          отправит форму. <br /><br />
+          Атрибут checked указывает какой переключатель будет выбран (отмечен)
+          по умолчанию. В группе радио кнопок в состоянии checked может быть
+          только 1 элемент.
+        </p>
+        <h2 class="title">Check box - флажки</h2>
+        <p>
+          Флажки чекбоксы похожи на переключатели, но позволяют выбрать
+          произвольное кол-во значений, т.е многие из многих. Чекбоксов может
+          быть целая группа, например выбор хобби, либо только один, например
+          принятие пользовательского соглашения при регистрации.
+        </p>
+        <form>
+          <p>Ваше хобби</p>
+          <label class="label">
+            <input type="checkbox" name="hobby" value="music" />
+             Музыка
+          </label>
+          <label class="label">
+            <input type="checkbox" name="hobby" value="sport" checked />
+             Спорт
+          </label>
+          <label class="label">
+            <input type="checkbox" name="hobby" value="reading" />
+             Чтение
+          </label>
+        </form>
+        <h2 class="title">Числа</h2>
+        <p>
+          Обычное текстовое поле принимает буквально любые символы - цифры,
+          буквы, пробелы, знаки пунктуауции и т.д. Для того чтобы разрешить
+          вводить только числа с возможностью ограничить диапазон используется
+          тип number. При вводе данных числовое поле браузер автоматически
+          игнорирует все символы кроме цифр.
+        </p>
+        <p class="bg">
+          &lt;label&gt; <br />
+          Age <br />
+          &lt;input type=&quot;number&quot; name=&quot;age&quot;
+          value=&quot;0&quot; min=&quot;18&quot; max=&quot;120&quot; /&gt;
+          <br />
+          &lt;/label&gt;
+        </p>
+        <p>
+          Конечно же есть много чисел, которые не подходят для каждого типа
+          числовых данных, например может быть необходимо запретить ввод слишком
+          больших либо отрицательных чисел. Эта проблема решается с помощью
+          атрибута min и max определяющий границы ввода <br /><br />
+          По умолчанию числовое поле принимает только целые числа. Это поведение
+          можно изменить с помощью атрибута step, который указывает шаг
+          изменения числа, по умолчание значение шага равно 1.
+        </p>
+        <form>
+          <label>
+            Ширина с шагом 0.5
+            <input
+              type="number"
+              name="number"
+              min="0"
+              max="99999"
+              step="0.5"
+              value="0"
+            />
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+        <h2 class="title">Телефонные номера</h2>
+        <p>
+          Тип tel создает поле ввода телефонных номеров, которые могут быть
+          предоставлены в самых различных форматах. В настоящее време
+          единственная польза от применения поля типа tel состоит отображение
+          виртуальной клавиатуры для введение телефонных номеров в моб
+          браузерах, которые содержат цифры но не буквы
+        </p>
+        <p class="bg">
+          &lt;form&gt; <br />
+          &lt;label&gt;<br />
+          Phone number <br />
+          &lt;input type=&quot;tel&quot; name=&quot;phone_number&quot; /&gt;
+          <br />
+          &lt;/label&gt; <br /><br />
+
+          &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;<br />
+          &lt;/form&gt;
+        </p>
+        <label
+          >Процентная ставка
+          <input
+            type="range"
+            name="range"
+            value="100"
+            min="0"
+            max="100"
+            step="1"
+          />
+        </label>
+        <p>Выбраное значение <span class="js-selected-value">1</span></p>
+        <p class="information">
+          Браузеры не предоставляют никакой визуальной обратной информации об
+          установленом значении. Это делается с помощью JS и доп разметки
+        </p>
+        <h2 class="title">Дата и время</h2>
+        <p>
+          В браузерах есть встроенных календарь, в котором пользователь может
+          выбрать и/или время. Атрибуты min и max позволяют установить
+          минимальные и максимальные даты, при условии использования правильного
+          формата.
+        </p>
+        <label>
+          Date
+          <input
+            type="date"
+            name="date"
+            min="2000-01-01"
+            max="2025-01-01"
+            value="2000-01-01"
+          />
+        </label>
+        <label>
+          Time
+          <input type="time" name="time" value="00:00" />
+        </label>
+        <label>
+          Date and time
+          <input type="datetime-local" name="dateTime" />
+        </label>
+        <p class="information">
+          Из за различного внешнего вида в разных браузерах и сложности его
+          изменения в CSS вместо нативного календаря чаще всего используют
+          готовые JS библиотеки.
+        </p>
+        <h2 class="title">Элемент textarea</h2>
+        <p>
+          Создает многострочные текстовые поля для воода большого кол-ва текста.
+          Например для обратной связи, коментарии, посты, уточнение деталей
+          заказа
+        </p>
+        <form>
+          <label>
+            Username
+            <input type="text" name="username" placeholder="Вася Пупкин" />
+          </label>
+          <label>
+            Feedback
+            <textarea
+              name="feedback"
+              rows="5"
+              placeholder="Enter message"
+            ></textarea>
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+        <p>
+          Атрибут rows устанавливает количество строк в высоту, cols колонок в
+          ширину. На практике указывается только rows, а ширина жлемента
+          контролируется через css. <br /><br />
+          По умолчанию элемент textarea можно растягивать по горизонтали и
+          вертикали. Для того, чтобы контролировать изменение размера
+          пользователем в css есть свойство resize
+        </p>
+        <p class="bg">
+          <b>resize: both | horizontal | vertical | none</b>
+        </p>
+        <h3 class="title">Элемент &lt;select&gt;</h3>
+        <p>
+          Выпадающее меню - альтернатива радио кнопкам, поскольку по умолчанию
+          позволяет выбрать одно из многих вариантов. Элемент select это
+          раскрывающее меню с атрибутом name, который содержит набор элементов -
+          options c атрибутом value <br /><br />
+          Текст внутри элемента options отображается пользователю, а значение
+          атрибута value это то, что будет использоваться при отправке формы.
+        </p>
+        <label for="size">
+          Size
+          <select name="size" id="size">
+            <option value="xs">Extra small</option>
+            <option value="s" selected>Small</option>
+            <option value="m">Medium</option>
+            <option value="l">Large</option>
+          </select>
+        </label>
+        <p class="informatin">
+          По умолчанию выбран первый элемент options из списка. Это можно
+          изменить задав необходимый опции атрибут-буль selected
+        </p>
+        <h2 class="title">Группировка опций</h2>
+        <label for="month">month </label>
+        <select
+          name="month
+        "
+          id="month"
+        >
+          <optgroup label="summer">
+            <option value="s6">June</option>
+            <option value="s7">July</option>
+            <option value="s8">August</option>
+          </optgroup>
+          <optgroup label="autumn">
+            <option value="s9">September</option>
+            <option value="s10">October</option>
+            <option value="s11">November</option>
+          </optgroup>
+        </select>
+        <h2 class="title">Элемент datalist</h2>
+        <p>
+          Автозаполнение - это прием с которым знакомы все пользователи. При
+          вводе символов в тестовое поле поисковая система предлагает различные
+          варианты автозаполнения. При наборе нового сообщения электронной почт
+          почтовый клиент предлагает список получателей. <br /><br />
+          Элемент datalist создает список предопределенных значений, который
+          можно выбрать при наборе в связаном текстовом поле. Этот список скрыт
+          и становится доступным при получении инпутом фокуса и набора текста в
+          нем. Список создаваемый элементом datalist связывается с текстовым
+          полем через атрибут id. Его значение должно совпадать со значением
+          атрибута list тега input.
+        </p>
+        <label for="fov"> Выбери свой браузер </label>
+        <input list="browser" name="fov" id="fov" />
+        <datalist id="browser">
+          <option>Chrome</option>
+          <option>Edje</option>
+          <option>FireFox</option>
+          <option>Opera</option>
+          <option>Safari</option>
+        </datalist>
+        <p>
+          Элементы options так же могут иметь атрибуты value. Это полезно когда
+          текст опции и значение не совпадают. Например пользователь может не
+          знать сокращение штатов в США, в выпадающем меню он увидит список
+          штатов и их сокращения, а при выборе опции текстовое поле будет
+          заполнено только значением опции
+        </p>
+        <label for="state">Выбери свой штат</label>
+        <input type="text" name="state" id="state" list="states" />
+        <datalist id="states">
+          <option value="AL">Alabama</option>
+          <option value="AK">Alaska</option>
+          <option value="AZ">Arizona</option>
+          <option value="AR">Arkanzas</option>
+        </datalist>
+        <h2 class="title">Группировка полей</h2>
+        <p>
+          Группировка связаных элементов делает формы более понятными для
+          пользователей. Это так же помогает пользователю сосредоточится на
+          небольших, упорядоченых группах полей, а не пытаться понять всю форму
+          сразу. Группировка выполняется как визуально в интерфейсе так и
+          логически в коде
+        </p>
+        <h3 class="title">Элементы &lt;fieldset&gt; и &lt;legend&gt;</h3>
+        <p>
+          Элемент fieldset это контейнер для группировки нескольких связаных
+          элементов в форме, а вложеный legend выполняет роль заголовка группы.
+          Связаные радиокнопки и чекбоксы всегда должны быть сгруппированы,
+          другие типы полей группируются по необходимости.
+        </p>
+        <form class="form">
+          <fieldset class="form-group">
+            <legend class="group-title">Введите свои контактные данные</legend>
+            <label class="form-label">
+              Name
+              <input type="text" name="username" />
+            </label>
+            <label class="form-label">
+              Email
+              <input type="email" name="email" />
+            </label>
+          </fieldset>
+          <fieldset class="form-group">
+            <legend class="group-title">
+              Выберете свой язык программирования
+            </legend>
+            <div class="form-field">
+              <input
+                type="checkbox"
+                name="language"
+                value="python"
+                id="python"
+              />
+              <label class="form-label" for="python"> Python </label>
+            </div>
+            <div class="form-field">
+              <input type="checkbox" name="language" value="js" id="js" />
+              <label class="form-label" for="js"> JavaScript </label>
+            </div>
+            <div class="form-field">
+              <input
+                type="checkbox"
+                name="language"
+                value="typescript"
+                id="typescript"
+              />
+              <label class="form-label" for="typescript"> Typescript </label>
+            </div>
+          </fieldset>
+          <fieldset class="form-group">
+            <legend class="group-title">Получить</legend>
+            <div class="form-field">
+              <input type="checkbox" name="newsletter" id="weekly" />
+              <label for="weekly" class="form-label"
+                >Еженедельный информационный биллютень</label
+              >
+            </div>
+            <div class="form-field">
+              <input
+                type="checkbox"
+                name="newsletter"
+                id="offers"
+                value="offers"
+              />
+              <label for="offers" class="form-label">Предложения</label>
+            </div>
+            <div class="form-field">
+              <input
+                type="checkbox"
+                name="newsletter"
+                id="associated_offers"
+                value="associated_offers"
+              />
+              <label for="associated_offers" class="form-label"
+                >Предложения от компаний</label
+              >
+            </div>
+            <button type="submit">Subscribe</button>
+          </fieldset>
+        </form>
+        <h3 class="title">Группировка с возможностью оформления</h3>
+        <p>
+          Элементы fieldset и legend имеют отличную симантику, но ограничены
+          возможности оформления. В большинстве случаев для группировки
+          элементов формы используется .div с атрибутами доступности role и
+          aria-labeldby
+        </p>
+        <p class="bg">
+          &lt;div role=&quot;group&quot;
+          aria-labelledby=&quot;contact-details-head&quot;&gt; <br />
+          &lt;p id=&quot;contact-details-head&quot;&gt;Enter your contact
+          details&lt;/p&gt;<br />
+          Related elements <br />
+          &lt;/div&gt;
+        </p>
+        <ul>
+          <li>
+            Атрибут <b>role="group"</b> указывает на то, что элементы внутри
+            этого <b>&lt;div&gt;</b> являются частью группы.
+          </li>
+          <li>
+            Атрибут <b>aria-labelledby="contact-details-head"</b> содержит
+            идентификатор элемента с описанием группы.
+          </li>
+        </ul>
+        <form class="form">
+          <div
+            class="form-group"
+            role="group"
+            aria-labeldby="contact-details-head"
+          >
+            <p id="contact-details-head">Введите свои контактные данные</p>
+            <label
+              >Name
+              <input type="text" name="username" />
+            </label>
+            <label
+              >Email
+              <input type="email" name="email" />
+            </label>
+          </div>
+          <div class="form-group" roll="group" aria-labeldby="language-head">
+            <p id="language-head">Ваш любимый язык программирования</p>
+            <label class="group__label">
+              <input
+                type="checkbox"
+                name="label"
+                value="python"
+              /> Python</label
+            >
+            <label class="group__label">
+              <input
+                type="checkbox"
+                name="label"
+                value="js"
+              /> JavaScript</label
+            >
+            <label class="group__label">
+              <input
+                type="checkbox"
+                name="label"
+                value="typescript"
+              /> Typescript</label
+            >
+          </div>
+          <div class="form-group" role="group" aria-labeldby="newsletter-head">
+            <p id="newsletter-head">Я хочу получить</p>
+            <label class="group__label">
+              <input type="checkbox" name="newsletter" value="weekly" />
+               Еженедельная информационная биллютень
+            </label>
+            <label class="group__label">
+              <input type="checkbox" name="newsletter" value="company_offers" />
+               Предложения от компании
+            </label>
+            <label class="group__label">
+              <input
+                type="checkbox"
+                name="newsletter"
+                value="associated_offers"
+              />
+               Предложения от других компаний
+            </label>
+          </div>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </header>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
